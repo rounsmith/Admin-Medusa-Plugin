@@ -8,7 +8,7 @@ const BackButton = () => {
   return (
     <Button
       variant="transparent"
-      className="w-1/6 flex flex-s gap-4 hover:cursor-pointer"
+      className="w-1/6 justify-start gap-4 hover:cursor-pointer"
       onClick={() => navigate(-1)}
     >
       <ArrowLeft />
