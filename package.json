@@ -22,7 +22,8 @@
     "seed": "cross-env medusa seed -f ./data/seed.json",
     "start": "cross-env npm run build && medusa start",
     "start:custom": "cross-env npm run build && node --preserve-symlinks --trace-warnings index.js",
-    "dev": "cross-env npm run build:server && medusa develop"
+    "dev": "cross-env npm run build:server && medusa develop",
+    "prettier-watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}"
   },
   "dependencies": {
     "@medusajs/admin": "^7.1.1",
@@ -40,10 +41,7 @@
     "cors": "^2.8.5",
     "dotenv": "16.0.3",
     "express": "^4.17.2",
-    "medusa-fulfillment-manual": "^1.1.38",
     "medusa-interfaces": "^1.3.7",
-    "medusa-payment-manual": "^1.0.24",
-    "medusa-payment-stripe": "^6.0.4",
     "prism-react-renderer": "^2.0.4",
     "react-xml-viewer": "^2.0.0",
     "typeorm": "^0.3.16"
