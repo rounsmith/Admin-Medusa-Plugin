@@ -18,7 +18,7 @@ const NewFeedsList: React.FC = () => {
           return (
             <Button
               variant="transparent"
-              onClick={() => addNew(item.feedType)}
+              onClick={() => addNew(item.title)}
               className="flex flex-col items-center gap-4"
             >
               {item.icon}

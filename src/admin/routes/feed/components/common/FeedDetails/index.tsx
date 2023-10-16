@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Text, Select, Input } from '@medusajs/ui';
+import { Text, Select, Input,Button } from '@medusajs/ui';
 
 interface FeedDetailsProps {
   feedName: string;
@@ -7,6 +7,7 @@ interface FeedDetailsProps {
 
 const FeedDetails: React.FC<FeedDetailsProps> = ({ feedName }) => {
   const [value, setValue] = useState<string | undefined>('active');
+  const [inputFeedName, setInputFeedName] = useState<string>(feedName);
 
   const handleChange = (value) => {
     setValue(value);
@@ -14,10 +15,15 @@ const FeedDetails: React.FC<FeedDetailsProps> = ({ feedName }) => {
 
   return (
     <div>
-      <div className="flex items-center gap-4">
+      <div className="flex flex-col  gap-4">
         <div className="flex flex-col gap-2">
-          <Text>Fee Name</Text>
-          <Input type="text" placeholder="Enter feed name" value={feedName} />
+          <Text>Feed Name</Text>
+          <Input
+            type="text"
+            placeholder="Enter feed name"
+            value={inputFeedName}
+            onChange={(e) => setInputFeedName(e.target.value)}
+          />
         </div>
         <div className="flex flex-col gap-2">
           <Text>Status</Text>
@@ -31,6 +37,13 @@ const FeedDetails: React.FC<FeedDetailsProps> = ({ feedName }) => {
             </Select.Content>
           </Select>
         </div>
+        <Button
+          variant="primary"
+          className="justify-start gap-4 hover:cursor-pointer w-fit"
+          onClick={() => console.log("yes")}
+        >
+          <Text>Save</Text>
+        </Button>
       </div>
     </div>
   );

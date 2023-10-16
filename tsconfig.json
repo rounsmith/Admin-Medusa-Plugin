@@ -18,7 +18,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/"],
+  "include": ["src/admin/routes/feed"],
   "exclude": [
     "dist",
     "build",
